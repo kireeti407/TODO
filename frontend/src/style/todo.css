@@ -1,0 +1,454 @@
+/* =========================================
+   GLOBALS (matches 21.dev aesthetic)
+========================================= */
+:root {
+  --glass: rgba(255, 255, 255, 0.06);
+  --glass-dark: rgba(0, 0, 0, 0.25);
+  --border: rgba(0, 255, 200, 0.18);
+  --neon-1: #00ffc3;
+  --neon-2: #00e0ff;
+
+  --text-primary: #e8faff;
+  --text-secondary: #94a3b8;
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+
+  --transition: 0.25s ease;
+}
+
+/* =========================================
+   TITLE
+========================================= */
+.todo-title {
+  text-align: center;
+  margin-top: 100px;
+  margin-bottom: 20px;
+
+  font-size: 38px;
+  font-weight: 700;
+  color: var(--text-primary);
+
+  text-shadow: 0 0 28px rgba(0, 255, 200, 0.45);
+  letter-spacing: 1px;
+}
+
+/* =========================================
+   INPUT + ADD BUTTON
+========================================= */
+.todo-input-box {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  margin-bottom: 35px;
+}
+
+.todo-input-box input {
+  width: 360px;
+  padding: 14px;
+
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  background: var(--glass-dark);
+  backdrop-filter: blur(10px);
+
+  color: var(--text-primary);
+  font-size: 16px;
+
+  transition: var(--transition);
+}
+
+.todo-input-box input:focus {
+  border-color: var(--neon-1);
+  box-shadow: 0 0 16px rgba(0, 255, 200, 0.35);
+  outline: none;
+}
+
+.btn-add {
+  padding: 12px 20px;
+
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  border: none;
+  border-radius: var(--radius-md);
+
+  background: linear-gradient(135deg, var(--neon-1), var(--neon-2));
+  color: #0a0a0a;
+  font-size: 16px;
+  font-weight: 700;
+
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.btn-add:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 255, 200, 0.4);
+}
+
+/* =========================================
+   GRID LAYOUT / CARD LIST
+========================================= */
+.todo-list {
+  width: 95%;
+  max-width: 1100px;
+  margin: 20px auto;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  gap: 30px;
+}
+
+/* =========================================
+   SINGLE TASK CARD (glass neon card)
+========================================= */
+.todo-card {
+  background: var(--glass-dark);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+
+  padding: 25px 20px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 16px;
+
+  color: var(--text-primary);
+  backdrop-filter: blur(16px);
+
+  box-shadow: 0 0 22px rgba(0, 255, 200, 0.12);
+  transition: var(--transition);
+
+  position: relative;
+
+  flex: 1 1 270px;
+  max-width: 350px;
+}
+
+.todo-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 28px rgba(0, 255, 200, 0.35);
+}
+
+/* Green Neon Glow When Completed */
+.todo-card.done {
+  /* background: linear-gradient(135deg, rgba(0, 255, 162, 0.61), rgba(0, 225, 255, 0.658)); */
+  background-color: #16a34a93;
+  border-color: #00ffa2;
+  animation: pulse-green 2s infinite;
+  /* color:black; */
+}
+
+.card-top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.card-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+/* =========================================
+   CARD CONTENT
+========================================= */
+.todo-index {
+  font-size: 14px;
+  opacity: 0.7;
+  font-weight: 600;
+}
+
+.todo-text {
+  font-size: 20px;
+  font-weight: 700;
+  text-align: center;
+
+  max-width: 100%;
+  word-wrap: break-word;
+  word-break: break-word;
+}
+
+.todo-date {
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+/* Button container inside card */
+.todo-card-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+/* =========================================
+   BUTTONS WITH ICONS
+========================================= */
+.btn {
+  min-width: 120px;
+  padding: 12px 20px;
+  text-align: center;
+
+  border-radius: var(--radius-md);
+  border: none;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+/* Edit */
+.btn-edit {
+  background: #2563eb;
+  color: white;
+}
+.btn-edit:hover {
+  background: #3b82f6;
+}
+
+/* Complete */
+.btn-complete {
+  background: #0d9488;
+  color: white;
+}
+.btn-complete:hover {
+  background: #14b8a6;
+}
+
+/* Save */
+.btn-save {
+  background: #16a34a;
+  color: white;
+  
+}
+.btn-save:hover {
+  background: #22c55e;
+}
+
+/* Delete */
+.btn-delete {
+  background: #dc2626;
+  color: white;
+}
+.btn-delete:hover {
+  background: #ef4444;
+}
+
+/* Cancel */
+.btn-cancel {
+  background: #7f1d1d;
+  color: white;
+}
+.btn-cancel:hover {
+  background: #dc2626;
+}
+
+/* =========================================
+   EDIT INPUT FIELD (premium glass)
+========================================= */
+.edit-input {
+  width: 95%;
+  padding: 12px;
+
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(0, 255, 200, 0.28);
+  border-radius: var(--radius-md);
+
+  font-size: 16px;
+  color: var(--text-primary);
+
+  backdrop-filter: blur(12px);
+  transition: var(--transition);
+}
+
+.edit-input:focus {
+  border-color: var(--neon-1);
+  box-shadow: 0 0 16px rgba(0, 255, 200, 0.4);
+  outline: none;
+}
+
+/* =========================================
+   DELETE CONFIRM MODAL
+========================================= */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(10px);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 10000;
+}
+
+.confirm-box {
+  background: var(--glass-dark);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+
+  padding: 30px;
+  width: 320px;
+
+  color: var(--text-primary);
+  text-align: center;
+
+  box-shadow: 0 0 25px rgba(0, 255, 200, 0.28);
+}
+
+.confirm-buttons {
+  margin-top: 18px;
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+}
+
+.btn-red,
+.btn-green {
+  padding: 10px 18px;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-red {
+  background: #dc2626;
+  color: white;
+}
+.btn-green {
+  background: #22c55e;
+  color: white;
+}
+
+/* =========================================
+   PAGINATION
+========================================= */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  margin-bottom: 50px;
+  gap: 10px;
+}
+
+.page-btn {
+  padding: 10px 16px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  background: var(--glass-dark);
+  color: var(--text-primary);
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.page-btn:not(:disabled):hover {
+  background: var(--glass);
+  border-color: var(--neon-1);
+}
+
+.page-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.page-btn.active {
+  background: linear-gradient(135deg, var(--neon-1), var(--neon-2));
+  color: #0a0a0a;
+  border: none;
+  box-shadow: 0 0 16px rgba(0, 255, 200, 0.4);
+}
+
+/* =========================================
+   MOBILE RESPONSIVE
+========================================= */
+@media (max-width: 550px) {
+  .todo-input-box {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .todo-input-box input {
+    width: 85%;
+  }
+
+  .btn-add {
+    width: 85%;
+    justify-content: center;
+  }
+
+  .todo-card {
+    min-height: 250px;
+    padding: 18px;
+  }
+}
+
+/* =========================================
+   NOTIFICATION
+========================================= */
+.notification {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 15px 20px;
+  border-radius: var(--radius-md);
+  color: white;
+  font-weight: 600;
+  z-index: 10001;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+
+  animation: slide-in 0.3s ease-out;
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.notification.success {
+  background: rgba(34, 197, 94, 0.7); /* green */
+  border-left: 5px solid #22c55e;
+}
+
+.notification.error {
+  background: rgba(239, 68, 68, 0.7); /* red */
+  border-left: 5px solid #ef4444;
+}
+
+@keyframes pulse-green {
+  0% {
+    box-shadow: 0 0 30px rgba(0, 255, 162, 0.863);
+  }
+  50% {
+    box-shadow: 0 0 45px rgba(0, 255, 162, 0.6);
+  }
+  100% {
+    box-shadow: 0 0 30px rgba(0, 255, 162, 0.45);
+  }
+} 

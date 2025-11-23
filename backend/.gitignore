@@ -1,0 +1,11 @@
+#Compiled files
+dist
+node_modules
+
+# Environment variables
+.env
+
+# Coverage reports
+coverage
+
+test

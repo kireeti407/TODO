@@ -1,0 +1,38 @@
+/* RESET EVERYTHING */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  background: #0a0a0c;
+  overflow-x: hidden;
+}
+
+
+/* THEME VARIABLES */
+:root {
+  --neon-1: #00ffbb;
+  --neon-2: #00d6ff;
+
+  --red-1: #ff5c84;
+  --red-2: #ff345b;
+
+  --text-primary: #e6faff;
+  --text-secondary: #b5c6c9;
+
+  --glass: rgba(255, 255, 255, 0.05);
+  --border: rgba(255, 255, 255, 0.09);
+
+  --radius-lg: 20px;
+  --radius-md: 12px;
+  --transition: 0.25s ease;
+}
+
+/* SMOOTH */
+button, input {
+  transition: var(--transition);
+}

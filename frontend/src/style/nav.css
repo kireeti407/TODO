@@ -1,0 +1,187 @@
+/* GLOBAL THEME VARIABLES — rely on index.css */
+/* NAVBAR WRAPPER */
+.nav21-wrapper {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  padding: 20px;
+  background: var(--glass);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(14px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;       /* 🔥 always on top */
+  top: 0;
+  left: 0;
+  z-index: 9999;          /* 🔥 bring above everything */
+}
+
+
+/* LOGO */
+.nav21-logo {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.nav21-logo .circle {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--neon-1), var(--neon-2));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 15px rgba(0, 255, 200, 0.45);
+}
+
+.nav21-logo .check {
+  font-size: 20px;
+  color: #0a0a0a;
+  font-weight: 700;
+}
+
+.nav21-logo h2 {
+  color: var(--text-primary);
+  font-size: 22px;
+  font-weight: 600;
+}
+
+/* RIGHT SECTION */
+.nav21-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  z-index: 9999;
+}
+
+/* Welcome text */
+.nav21-welcome {
+  color: var(--text-secondary);
+  font-size: 15px;
+}
+
+/* BUTTONS */
+.nav21-buttons {
+  display: flex;
+  gap: 12px;
+}
+
+/* Shared button style */
+/* Login/Signup/Logout buttons */
+.nav21-btn {
+  padding: 10px 20px;
+  border-radius: var(--radius-md);
+  border: none;
+
+  background: linear-gradient(135deg, var(--neon-1), var(--neon-2));
+  color: #0a0a0a;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+/* Hover */
+.nav21-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 255, 200, 0.32);
+}
+
+/* Logout button — EXACT same style but red */
+.nav21-btn.logout {
+  background: linear-gradient(135deg, var(--red-1), var(--red-2));
+  color: white;
+}
+
+.nav21-btn.logout:hover {
+  box-shadow: 0 6px 18px rgba(255, 99, 130, 0.32);
+}
+
+
+.nav21-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0, 255, 200, 0.3);
+}
+
+/* Logout */
+.logout {
+  background: linear-gradient(135deg, var(--neon-red-1), var(--neon-red-2));
+  color: white;
+}
+
+.logout:hover {
+  box-shadow: 0 6px 14px rgba(255, 99, 130, 0.32);
+}
+
+
+
+.burger {
+  width: 28px;
+  height: 21px;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.burger span {
+  height: 3px;
+  width: 100%;
+  background: var(--neon-2);
+  border-radius: 2px;
+  transition: 0.3s ease;
+}
+
+/* Burger animation */
+.burger.open span:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+.burger.open span:nth-child(2) {
+  opacity: 0;
+}
+.burger.open span:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+
+
+@media (max-width: 730px) {
+  .burger {
+    display: flex;
+  }
+
+  .nav21-right {
+    position: absolute;
+    top: 68px;
+    right: 0;
+    width: 100%;
+    padding: 18px 0;
+    background: var(--glass-bg);
+    border-bottom: 1px solid var(--glass-border);
+    border-top: 1px solid var(--glass-border);
+    backdrop-filter: blur(18px);
+    flex-direction: column;
+    gap: 16px;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-10px);
+    transition: 0.3s ease;
+    background-color: #0a0a0ab6;
+     z-index: 9999
+  }
+
+  .nav21-right.show {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  .nav21-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
