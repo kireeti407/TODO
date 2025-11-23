@@ -1,4 +1,3 @@
-/* RESET EVERYTHING */
 * {
   margin: 0;
   padding: 0;
@@ -13,7 +12,7 @@ html, body {
 }
 
 
-/* THEME VARIABLES */
+
 :root {
   --neon-1: #00ffbb;
   --neon-2: #00d6ff;
@@ -32,7 +31,7 @@ html, body {
   --transition: 0.25s ease;
 }
 
-/* SMOOTH */
+
 button, input {
   transition: var(--transition);
 }

@@ -1,4 +1,3 @@
-/* Global theme colors for consistency */
 :root {
   --neon-1: #00ffbb;
   --neon-2: #00d6ff;
@@ -9,24 +8,24 @@
   --border-light: rgba(255, 255, 255, 0.08);
 }
 
-/* Background */
+
 .premium-wrapper,
 .dev21-wrapper {
-  min-height: calc(100vh - 60px);  /* ← Accounts for navbar height */
+  min-height: calc(100vh - 60px);  
   width: 100%;
   background: var(--bg-dark);
   margin-top: 70px; 
   display: flex;
   flex-direction: column;
-  justify-content: center;  /* ← Centers vertically */
-  align-items: center;      /* ← Centers horizontally */
+  justify-content: center;  
+  align-items: center;      
 
   padding: 20px;
   margin: 0;
 }
 
 
-/* Logo (same as navbar) */
+
 .todo-logo {
   display: flex;
   align-items: center;
@@ -58,7 +57,7 @@
   font-size: 22px;
 }
 
-/* Signup Card — perfectly matching navbar glass */
+
 .dev21-card {
   width: 360px;
   padding: 32px;
@@ -82,7 +81,7 @@
   }
 }
 
-/* Title */
+
 .dev21-title {
   font-size: 24px;
   color: var(--text-primary);
@@ -90,7 +89,7 @@
   font-weight: 600;
 }
 
-/* Inputs — same glow intensity as navbar buttons */
+
 .dev21-input {
   width: 100%;
   padding: 14px;
@@ -109,7 +108,7 @@
   outline: none;
 }
 
-/* Button – same gradient & radius as navbar */
+
 .dev21-btn {
   padding: 12px 18px;
   background: linear-gradient(135deg, var(--neon-1), var(--neon-2));
@@ -130,14 +129,14 @@
   box-shadow: 0 6px 18px rgba(0, 255, 200, 0.32);
 }
 
-/* Message */
+
 .dev21-msg {
   color: var(--neon-2);
   margin-top: 12px;
   font-size: 14px;
 }
 
-/* Footer link */
+
 .dev21-footer {
   color: var(--text-secondary);
   margin-top: 15px;
@@ -154,13 +153,12 @@
 
 @media (max-width: 480px) {
   .dev21-card {
-    width: 90%;      /* Full width but still clean */
+    width: 90%;      
     max-width: 360px;
-    margin: 0 auto;  /* CENTERED */
+    margin: 0 auto;  
   }
 
   .todo-logo {
-    margin-top: 10px; /* Better spacing on top */
+    margin-top: 10px; 
   }
 }
-

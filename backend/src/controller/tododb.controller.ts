@@ -1,9 +1,11 @@
+//todocontroller
 import { Request, Response } from "express";
 import TODO from "../model/TODO.model";
 
 export const gettask = async (req: Request, res: Response) => {
   try {
-    const data = await TODO.find();
+    const {email} = req.query
+    const data = await TODO.find({email});
     res.status(200).json({ msg: "success", data });
   } catch (err) {
     res.status(400).json({ msg: "Something went wrong" });

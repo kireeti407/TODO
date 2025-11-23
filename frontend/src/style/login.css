@@ -1,24 +1,23 @@
-/* Wrapper (same as signup) */
 .login-wrapper {
-  min-height: calc(100vh - 70px); /* adjusts for fixed navbar */
+  min-height: calc(100vh - 70px); 
   width: 100%;
 
   display: flex;
   flex-direction: column;
-  justify-content: center; /* vertical center */
-  align-items: center;     /* horizontal center */
+  justify-content: center; 
+  align-items: center;     
 
   padding: 20px;
   margin: 0;
   background: var(--bg-dark);
 }
 
-/* Card */
+
 .login-card {
   width: 360px;
   padding: 32px;
 
-  background: var(--glass);                  /* glass blur effect */
+  background: var(--glass);                  
   border: 1px solid var(--border);
   backdrop-filter: blur(18px);
   border-radius: var(--radius-lg);
@@ -39,7 +38,7 @@
   }
 }
 
-/* Title */
+
 .login-title {
   color: var(--text-primary);
   font-size: 24px;
@@ -47,7 +46,7 @@
   font-weight: 600;
 }
 
-/* Input Fields (same as signup) */
+
 .login-input {
   width: 100%;
   padding: 14px;
@@ -69,7 +68,7 @@
   outline: none;
 }
 
-/* Login Button */
+
 .login-btn {
   width: 80%;
   padding: 12px 0;
@@ -92,14 +91,14 @@
   box-shadow: 0 6px 18px rgba(0, 255, 200, 0.32);
 }
 
-/* Small message or errors */
+
 .login-msg {
   margin-top: 10px;
   color: var(--neon-2);
   font-size: 14px;
 }
 
-/* Link */
+
 .login-footer {
   margin-top: 18px;
   color: var(--text-secondary);
@@ -114,7 +113,7 @@
   text-decoration: underline;
 }
 
-/* Responsive (Mobile) */
+
 @media (max-width: 480px) {
   .login-card {
     width: 90%;

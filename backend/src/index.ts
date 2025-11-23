@@ -3,14 +3,15 @@ import todoRouter from "./router/Todo.route";
 import cors from 'cors'
 import DB from "./config/DB.config";
 import userRouter from "./router/user.route";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 const app=express()
 
 app.use(express.json())
 
-app.use(cors({
-  origin: 'http://localhost:5173'
-}));
+app.use(cors());
 
 DB()
 app.use('/TODO',todoRouter)
@@ -26,8 +27,10 @@ app.get('/test',(req:any,res:any)=>{
     }
 })
 
-app.listen(3000,()=>{
-    console.log("server run on port no 3000")
+const port = process.env.PORT || 3000;
+
+app.listen(port,()=>{
+    console.log(`server run on port no ${port}`)
 })
 
 

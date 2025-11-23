@@ -1,3 +1,4 @@
+//usercontroller
 import USER from "../model/user.model";
 
 export const singup = async (req: any, res: any) => {
