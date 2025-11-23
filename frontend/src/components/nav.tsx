@@ -12,7 +12,7 @@ interface User {
 
 export default function Nav() {
   const [user, setUser] = useState<User | null>(null);
-  const [open, setOpen] = useState(false); // burger menu state
+  const [open, setOpen] = useState(false); 
   const navigate = useNavigate();
 
   useEffect(() => {
