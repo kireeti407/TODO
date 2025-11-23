@@ -47,6 +47,7 @@ export default function Signup() {
         })
       );
       navigate("/")
+      window.location.reload();
     } catch (err) {
       setMsg("Signup failed");
     }
