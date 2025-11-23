@@ -1,4 +1,4 @@
-// signup
+
 import { useState, useEffect} from "react";
 import "../style/signup.css";
 import { useNavigate } from "react-router-dom";
@@ -46,8 +46,7 @@ export default function Signup() {
           email: data.response.email,
         })
       );
-
-      window.location.reload();
+      navigate("/")
     } catch (err) {
       setMsg("Signup failed");
     }
