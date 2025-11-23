@@ -48,10 +48,11 @@ export default function Todo() {
   };
 
   async function fetchData() {
-    const res = await fetch(`${import.meta.env.VITE_API_URL}TODO/gettask`);
-    const data = await res.json();
     const user = getUser();
-    setTodo(data.data.filter((t: Task) => t.email === user.email));
+    if (!user) return;
+    const res = await fetch(`${import.meta.env.VITE_API_URL}TODO/gettask?email=${user.email}`);
+    const data = await res.json();
+    setTodo(data.data);
   }
 
   useEffect(() => {
@@ -77,12 +78,11 @@ export default function Todo() {
       body: JSON.stringify({
         task,
         date: new Date().toLocaleString(),
-        id: Date.now(),
         complete: false,
         email: user.email,
       }),
     });
-
+    console.log(user,task);
     setTask("");
     fetchData();
     showNotification("Task added successfully!", "success");
