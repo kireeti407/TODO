@@ -102,7 +102,7 @@ export default function Signup() {
         <p className="dev21-msg">{msg}</p>
 
         <p className="dev21-footer">
-          Already have an account? <span onClick={()=>{
+          Already have an account ? <span onClick={()=>{
            navigate("/");
           }}>Login</span>
         </p>
