@@ -96,7 +96,7 @@ export default function Signup() {
         />
 
         <button className="dev21-btn small" onClick={signup}>
-          <i data-lucide="user-plus"></i> Sign up
+          <i data-lucide="user-plus"></i> Sign-up
         </button>
 
         <p className="dev21-msg">{msg}</p>
